@@ -9,7 +9,8 @@
     Welcome to my portfolio, where I'll be putting everything I learn or do as assignments in my Frontend Developer class
   </p>
   <hr>
-  <h2>My assignments</h2>
+  <h2>Assignment repository</h2>
+  <p>Follow the link(s) underneath to see my submitted assignments</p>
 <ul>
   <li><a href="/portfolio/assignment1/index.html">Assignment 1 - Create an online Portfolio</a></li>
 </ul>
@@ -26,6 +27,5 @@
       <a href="https://www.facebook.com/kristian.harlem" target="_blank"><img src="https://img.shields.io/badge/Facebook-0866ff?style=plastic&logo=facebook"></a>
       <a href="https://www.instagram.com/klistimann" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=plastic&logo=instagram&logoColor=white"></a>
       <br>
-
 
 </div>
