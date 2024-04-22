@@ -1,0 +1,46 @@
+:root {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  --backgroundColor: #cdcdcd;
+  --fontColor: #222222;
+  --headerHeight: 20dvh;
+  --shadow: 0px 0px 8px 1px rgb(0 0 0);
+}
+
+.forum-regular {
+  font-family: "Forum", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-family: "Poppins";
+  margin: 0;
+}
+
+body {
+  margin: 0px;
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
+
+#parent {
+  width: 100%;
+}
+
+#header {
+  display: flex;
+}
+
+#profilePic {
+  width: 200px;
+}
