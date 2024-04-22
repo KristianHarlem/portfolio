@@ -11,7 +11,7 @@
   <hr>
   <h2>My assignments</h2>
 <ul>
-  <li><a href="/assignment1/index.html">Assignment 1 - Create an online Portfolio</a></li>
+  <li><a href="/portfolio/assignment1/index.html">Assignment 1 - Create an online Portfolio</a></li>
 </ul>
 
   <hr>
@@ -26,7 +26,6 @@
       <a href="https://www.facebook.com/kristian.harlem" target="_blank"><img src="https://img.shields.io/badge/Facebook-0866ff?style=plastic&logo=facebook"></a>
       <a href="https://www.instagram.com/klistimann" target="_blank"><img src="https://img.shields.io/badge/Instagram-E4405F?style=plastic&logo=instagram&logoColor=white"></a>
       <br>
-      
 
 
 </div>
