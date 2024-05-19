@@ -12,7 +12,8 @@
   <h2>Assignment repository</h2>
   <p>Follow the link(s) underneath to see my submitted assignments</p>
 <ul>
-  <li><a href="/portfolio/assignment1/index.html">Assignment 1 - Create an online Portfolio</a></li>
+  <li><a href="https://portfolio.harlem.onl/assignment1/index.html">Assignment 1 - Create an online Portfolio</a></li>
+  <li><a href="https://portfolio.harlem.onl/graded-assignment/index.html">Graded Assignment - Create a webshop</a></li>
 </ul>
 
   <hr>
