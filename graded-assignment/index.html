@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komputer Store</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" type="module" defer></script>
+  </head>
+  <body>
+    <div id="modalContainer">
+      <div id="modal">
+        <div id="modalBody">
+          <h2 id="noticeH2">Notice!</h2>
+          <span id="close">&times;</span>
+        </div>
+        <section id="modalTextContainer">
+          <p id="modalText">Tekst dude</p>
+        </section>
+      </div>
+    </div>
+    <section id="container">
+      <header>
+        <h1>Komputer Store</h1>
+      </header>
+      <div id="bank">
+        <h2>Joe Banker</h2>
+        <div class="bankWorkText">
+          <p>Balance</p>
+          <span id="balanceInfo"></span>
+        </div>
+        <div id="showLoan" class="noLoan">
+          <p>Outstanding loan:</p>
+          <span id="loanInfo"></span>
+        </div>
+        <button id="loanButton">Get a loan</button>
+      </div>
+      <div id="work">
+        <h2>Work</h2>
+        <div class="bankWorkText">
+          <p>Pay</p>
+          <span id="earnedAmount"></span>
+        </div>
+        <div id="bankButtonWrapper">
+          <button id="bankButton">Bank</button>
+          <button id="workButton">Work</button>
+        </div>
+        <div id="payBalanceWrapper" class="noLoan">
+          <button id="payBalanceButton">Repay loan</button>
+        </div>
+      </div>
+      <div id="laptops">
+        <h2>Laptops</h2>
+        <select name="laptops" id="laptopSelector">
+          <option value="">--Choose a laptop</option>
+        </select>
+        <h3>Features:</h3>
+        <ul id="features"></ul>
+      </div>
+      <div id="buyNow">
+        <div id="buyPic">
+          <img id="buyImg" src="" alt="" onerror="this.src='noImage.svg'" />
+        </div>
+        <div id="buyDescription">
+          <h2 id="laptopTitle"></h2>
+          <p id="laptopDescription"></p>
+        </div>
+        <div id="buyPriceField">
+          <h2 id="price"></h2>
+          <button id="buyButton">BUY NOW</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
