@@ -130,7 +130,6 @@ function setBalance() {
     style: "currency",
     currency: "NOK",
   }).format("-" + loanAlready);
-  console.log(loan + " is the loan");
   if (loan > 0) {
     showLoan.style.display = "flex";
     payBalanceWrapper.style.display = "flex";
@@ -175,12 +174,8 @@ function loanApplication() {
       `${balance * 2}`
     );
     if (application <= balance * 2) {
-      console.log("Loan: ", application * 1);
       bank.loanAccepted(application * 1);
-      // console.log(bank.loanAccepted());
       setBalance(), setPay();
-      console.log("Balance: ", balance);
-      // console.log("Loaned: ", bank.loan, "Applied: ", application);
     } else if (application > balance * 2) {
       makeModal(`You can't apply for a loan of more than ${balance * 2}`);
     } else {
@@ -208,12 +203,10 @@ workButton.addEventListener("click", function () {
 bankButton.addEventListener("click", function () {
   let pay = bank.getPay();
   let loan = bank.getLoan();
-  console.log("Pay: " + pay + ", Loan: " + loan);
   if (pay <= 0) {
     makeModal(
       "You haven't earned any money to deposit to your account. Go to work, and try again."
     );
-    console.log("Pay is less than or equal to 0");
   } else if (loan > 0 && pay > 0) {
     bank.deposit(pay * 0.9);
     bank.payLoan(pay * 0.1);
@@ -230,22 +223,17 @@ bankButton.addEventListener("click", function () {
     setBalance();
     makeModal(`${pay},00 kr deposited to your account.`);
   } else if (loan < 0) {
-    console.log("You have a loan");
   }
 });
 
 payBalance.addEventListener("click", function () {
   let pay = bank.getPay();
   let loan = bank.getLoan();
-  let balance = bank.getBalance();
-
-  console.log("Pay: " + pay + ", Loan: " + loan);
 
   if (pay <= 0) {
     makeModal(strings.noPay);
   } else {
     if (pay - loan > 0) {
-      console.log("Loan minus pay = ", pay - loan);
       bank.payLoan(loan);
       bank.deposit(pay - loan);
       makeModal(
