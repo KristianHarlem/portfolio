@@ -1,0 +1,277 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #ececec;
+}
+
+div#bank,
+div#work,
+div#laptops,
+div#buyNow {
+  -webkit-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 25px -7px rgba(0, 0, 0, 0.5);
+}
+
+p,
+span {
+  font-size: 18px;
+}
+
+h2 {
+  margin: 0 0 1rem 0;
+}
+
+#modal {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  width: 40%;
+}
+
+#modalContainer {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  backdrop-filter: blur(3px);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#modalBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+#noticeH2 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#modalTextContainer {
+  padding: 1rem;
+}
+
+#close {
+  position: relative;
+  top: -40px;
+  right: -30px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#container {
+  display: grid;
+  gap: 2rem;
+  /* grid-template-rows: 10% 0% 40% 40% 20%; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  padding-left: 10%;
+  background-color: black;
+  color: white;
+}
+#bank {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#loanButton {
+  background-color: #4bf0a1;
+  border: solid 1px #78c6a3;
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 18px;
+}
+
+#work {
+  grid-column-start: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bankWorkText,
+#showLoan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+#loanInfo {
+  color: #b90000;
+}
+
+#bankButtonWrapper {
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+}
+
+#bankButton,
+#workButton {
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 18px;
+  width: 40%;
+}
+
+#payBalanceWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  &:hover {
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform: scale(1.03);
+  }
+  &:active {
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(0.98);
+  }
+}
+
+#payBalanceButton {
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 18px;
+  background-color: #940c27;
+  border: solid 1px #5f0505;
+  color: white;
+}
+
+#bankButton {
+  background-color: #edef4c;
+  border: solid 1px #dadf41;
+}
+
+#workButton {
+  background-color: #4d70f0;
+  border: solid 1px #506de4;
+  color: white;
+}
+
+#laptops {
+  grid-column-start: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 150px;
+  overflow-y: auto;
+}
+
+select {
+  height: 2rem;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+#buyNow {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  border: solid 1px #e4e4e4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#buyImg {
+  flex-grow: 1;
+  width: 150px;
+  height: 150px;
+}
+
+#buyDescription {
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#buyPriceField {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#buyButton {
+  background-color: #4bc9f1;
+  border: solid 1px #4e9baf;
+  border-radius: 8px;
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 18px;
+}
+
+.noLoan {
+  display: none;
+}
+
+@media only screen and (max-width: 1450px) {
+  #container {
+    grid-template-columns: 12.5% 25% 25% 25% 12.5%;
+    gap: 1rem;
+  }
+  header {
+    grid-area: 1 / 1 / 2 / 6;
+  }
+  #bank {
+    grid-area: 3 / 2 / 4 / 5;
+  }
+  #work {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+  #laptops {
+    grid-area: 5 / 2 / 6 / 5;
+  }
+  #buyNow {
+    grid-area: 6 / 2 / 7 / 5;
+  }
+}
