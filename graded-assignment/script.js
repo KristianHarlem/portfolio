@@ -253,10 +253,16 @@ payBalance.addEventListener("click", function () {
 buyLaptop.addEventListener("click", function () {
   let selectedIndex = selectLaptops.selectedIndex;
   let balance = bank.getBalance();
-  let price = 200;
+
   if (selectedIndex === 0) {
     makeModal(`You must select a laptop model in order to make a purchase.`);
-  } else if (price > balance) {
+    return;
+  }
+
+  let selectedLaptop = laptopDetails[selectedIndex - 1];
+  let price = selectedLaptop.price;
+
+  if (price > balance) {
     makeModal(`You don't have enough money to buy this laptop.`);
   } else {
     bank.withdraw(price);
@@ -265,4 +271,5 @@ buyLaptop.addEventListener("click", function () {
     );
   }
   setBalance();
+  console.log(balance);
 });
