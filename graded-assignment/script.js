@@ -31,7 +31,6 @@ async function getLaptopDetails() {
   const resp = await fetch(laptopApiUrl);
   const json = await resp.json();
   laptopDetails = json;
-  console.log(laptopDetails);
   renderLaptops(laptopDetails);
   renderFeatures(laptopDetails);
   renderPicture(laptopDetails);
@@ -140,7 +139,6 @@ function setBalance() {
 }
 
 loanButton.addEventListener("click", function () {
-  console.log("Loanbutton was clicked");
   loanApplication();
 });
 
@@ -167,21 +165,14 @@ function loanApplication() {
   } else if (balance === 0) {
     makeModal(strings.noBalance);
   } else {
-    let application = prompt(
-      `You are elligble for a loan. How much do you wish to borrow? Please note, you may not borrow more than ${
-        balance * 2
-      },00 kr`,
-      `${balance * 2}`
-    );
+    let application = prompt(strings.loanAmount, `${balance * 2}`);
     if (application <= balance * 2) {
       bank.loanAccepted(application * 1);
       setBalance(), setPay();
     } else if (application > balance * 2) {
-      makeModal(`You can't apply for a loan of more than ${balance * 2}`);
+      makeModal(strings.tooLargeLoan(balance));
     } else {
-      makeModal(
-        "You can only input a number, please try again or contact customer support."
-      );
+      makeModal(strings.onlyNumber);
     }
   }
 }
@@ -204,24 +195,18 @@ bankButton.addEventListener("click", function () {
   let pay = bank.getPay();
   let loan = bank.getLoan();
   if (pay <= 0) {
-    makeModal(
-      "You haven't earned any money to deposit to your account. Go to work, and try again."
-    );
+    makeModal(strings.noMoneyEarned);
   } else if (loan > 0 && pay > 0) {
     bank.deposit(pay * 0.9);
     bank.payLoan(pay * 0.1);
     setPay();
     setBalance();
-    makeModal(
-      `${pay * 0.9},00 kr deposited to your account and ${
-        pay * 0.1
-      },00 kr paid towards your loan.`
-    );
+    makeModal(strings.splitDepositMade(pay));
   } else if (pay > 0) {
     bank.deposit(pay);
     setPay();
     setBalance();
-    makeModal(`${pay},00 kr deposited to your account.`);
+    makeModal(strings.depositMade(pay));
   } else if (loan < 0) {
   }
 });
@@ -236,14 +221,10 @@ payBalance.addEventListener("click", function () {
     if (pay - loan > 0) {
       bank.payLoan(loan);
       bank.deposit(pay - loan);
-      makeModal(
-        `${loan},00 kr paid towards your loan. The rest (${
-          pay - loan
-        },00 kr) was deposited to your account.`
-      );
+      makeModal(strings.balanceSplitPaid(loan, pay));
     } else {
       bank.payLoan(pay);
-      makeModal(`${pay},00 kr paid towards your loan.`);
+      makeModal(strings.balancePaid(pay));
     }
     setBalance();
     setPay();
@@ -255,7 +236,7 @@ buyLaptop.addEventListener("click", function () {
   let balance = bank.getBalance();
 
   if (selectedIndex === 0) {
-    makeModal(`You must select a laptop model in order to make a purchase.`);
+    makeModal(strings.chooseLaptop);
     return;
   }
 
@@ -263,13 +244,10 @@ buyLaptop.addEventListener("click", function () {
   let price = selectedLaptop.price;
 
   if (price > balance) {
-    makeModal(`You don't have enough money to buy this laptop.`);
+    makeModal(strings.notEnoughMoney);
   } else {
     bank.withdraw(price);
-    makeModal(
-      `Congratulations, you've bought a laptop! Now you're ready to take on the world!`
-    );
+    makeModal(strings.congratulations);
   }
   setBalance();
-  console.log(balance);
 });
