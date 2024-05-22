@@ -163,7 +163,7 @@ function loanApplication() {
   let loan = bank.getLoan();
   let balance = bank.getBalance();
   if (loan > 0) {
-    makeModal(strings.hasLoan);
+    makeModal(strings.hasLoan(loan));
   } else if (balance === 0) {
     makeModal(strings.noBalance);
   } else {
